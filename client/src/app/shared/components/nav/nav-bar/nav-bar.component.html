@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a routerLink="/" routerLinkActive="router-link-active" class="navbar-brand">Library</a>
+    <div class="d-flex justify-content-between" id="navbarScroll">
+      
+      <div class="nav-item" *ngIf="!(isLoggedIn$ | async); else username">
+        <a routerLink="/login" routerLinkActive="router-link-active"  class="btn btn-success me-2" tabindex="-1" aria-disabled="true">Sign in</a>
+        <a routerLink="/registration" routerLinkActive="router-link-active"  class="btn btn-primary" tabindex="-1" aria-disabled="true">Sign up</a>
+      </div>
+
+      <ng-template #username>
+        <span class="p-2 bg-success text-white rounded">{{( currentUser$ | async).username }}</span>
+      </ng-template>
+
+    </div>
+  </div>
+</nav>

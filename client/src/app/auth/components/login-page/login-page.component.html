@@ -1,0 +1,38 @@
+<div class="auth-page">
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-6 mt-5 offset-md-3 col-xs-12">
+          <h1 class="text-xs-center">Sign In</h1>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset>
+              <fieldset class="form-group mb-2">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Username"
+                  formControlName="username"
+                />
+              </fieldset>
+              <fieldset class="form-group mb-2">
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+              </fieldset>
+
+              <p class="text-xs-center d-flex justify-content-between align-items-center">
+                <button class="btn btn-lg btn-primary pull-xs-right" [disabled]="isSubmitting$ | async" type="submit">
+                  Sign in
+                </button>
+                <a routerLink="['/registration']">Do not have an account?</a>
+              </p>
+            </fieldset>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
